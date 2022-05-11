@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Ear Trainer</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>		
+		<script src="scripts.js" defer></script>
+		<link rel="stylesheet" href="styles.css">
+		<script src="Tone.js"></script>
+	</head>
+	
+	<body>
+		<div id="control-panel">
+			<div id="select-wrapper">
+			<select id="mode-select">
+				<option value="Minor Chord" trans-key="minor-chord">Minor Chord</option>
+				<option value="Major Chord" trans-key="major-chord">Major Chord</option>
+				<option value="Min7 Chord" trans-key="min7-chord">Min7 Chord</option>
+				<option value="Maj7 Chord" trans-key="maj7-chord">Maj7 Chord</option>
+				<option value="Minor Pentatonic" trans-key="minor-pentatonic" selected="selected">Minor Pentatonic</option>
+				<option value="Major Pentatonic" trans-key="major-pentatonic">Major Pentatonic</option>
+				<option value="Aeolian" trans-key="aeolian">Aeolian</option>
+				<option value="Lydian" trans-key="lydian">Lydian</option>
+				<option value="Ionian" trans-key="ionian">Ionian</option>
+				<option value="Phrygian" trans-key="phrygian">Phrygian</option>
+				<option value="Dorian" trans-key="dorian">Dorian</option>
+				<option value="Mixolydian" trans-key="mixolydian">Mixolydian</option>
+				<option value="Locrian" trans-key="locrian">Locrian</option>
+				<option value="Minor Blues" trans-key="minor-blues">Minor Blues</option>
+				<option value="Major Blues" trans-key="major-blues">Major Blues</option>
+				<option value="Harmonic Minor" trans-key="harmonic-minor">Harmonic Minor</option>
+				<option value="Phrygian Dominant" trans-key="phrygian-dominant">Phrygian Dominant</option>
+				<option value="Chromatic" trans-key="chromatic">Chromatic</option>
+			</select>
+			<select id="key-select">
+				<option value="C">C</option>
+				<option value="C#">C#</option>
+				<option value="D">D</option>
+				<option value="D#">D#</option>
+				<option value="E">E</option>
+				<option value="F">F</option>
+				<option value="F#">F#</option>
+				<option value="G">G</option>
+				<option value="G#">G#</option>
+				<option value="A" selected="selected">A</option>
+				<option value="A#">A#</option>
+				<option value="B">B</option>
+			</select>
+			</div>
+			
+			<label for="speed-range" id="speed-range-label" trans-key="speed">Speed</label>
+			<input type="range" min="100" max="1500" value="1000" id="speed-range" name="speed-range">
+			
+			<label for="melody-length-range" id="melody-length-range-label" trans-key="melody-length">Melody length: 5</label>
+			<input type="range" min="3" max="9" value="5" id="melody-length-range" name="melody-length-range">
+			
+			<div id="button-wrapper">
+				<button id="reveal-sequence" class="control-buttons" trans-key="reveal-sequence">Reveal Sequence</button>
+				<div id="play-buttons">
+					<button id="new-sequence" class="control-buttons" trans-key="new-sequence">New Sequence</button>
+					<button id="restart-exercise" class="control-buttons" trans-key="restart-exercise">Restart</button>
+					<button id="play-again" class="control-buttons" trans-key="play-again">Play Again</button>
+				</div>
+			</div>
+			<!-- incase of testing a new function -->
+			<!--<button id="test-button">TEST</button>-->
+		</div>
+		
+		<div id="display-n-score">
+			<div id="keyboard"></div>
+			<div id="display"></div>
+			<div id="score-container"><span id="score"></span><span id="time"></span></div>
+		</div>
+	</body>
+</html>
