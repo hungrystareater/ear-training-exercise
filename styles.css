@@ -1,0 +1,326 @@
+* {
+	font-family: Helvetica;
+	box-sizing: border-box;
+}
+
+:root {
+	--note-width: 20%;
+	--note-height: 4.3478%;
+}
+
+body {
+	margin: 0;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: row;
+	height: 100vh;
+}
+
+
+
+
+
+#control-panel {
+	background: #123;
+	height: 100%;
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#select-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+#button-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 20px;
+	font-size: 0;
+}
+
+
+
+
+
+#keyboard {
+	width: 7%;
+	height: 92%;
+	background: #345;
+	border-left: 1px dotted #ccc;
+	float: left;
+}
+.keyboard-key {
+	width: 100%;
+	height: var(--note-height);
+	color: #ccc;
+	font-family: 'Open Sans', sans-serif;
+	font-size: .65em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 1px dotted #eee;
+	border-top: 1px dotted #eee;
+}
+.light {
+	background: white;
+	color: #444;
+}
+
+
+
+
+
+#display-n-score {
+	height: 100%;
+	width: 70%;
+}
+
+#display {
+	float: right;
+	height: 92%;
+	width: 93%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: center;
+}
+#welcome {
+	background-image: linear-gradient(to bottom right, #ededed, white);
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+#exercise, #generator {
+	display: block;
+}
+#welcome-button-panel {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+#welcome-button-panel p {
+	font-family: 'Open Sans', sans-serif;
+	font-size: .9em;
+}
+
+.note-container {
+	width: var(--note-width);
+	height: var(--note-height);
+	border-top: 1px solid #eee;
+	border-left: 1px dotted #aaa;
+	padding: 3px;
+}
+
+.dark {
+	background: #eee;
+}
+
+.note {
+	width: 100%;
+	height: 100%;
+	border-radius: 50px;
+	cursor: pointer;
+}
+
+.note:hover {
+	border: 1px dotted #4361ee;
+}
+
+.played {
+	/*background: #4361ee;*/
+}
+
+#score-container {
+	clear: both;
+	width: 100%;
+	height: 8%;
+	font-size: .9em;
+	background: #123;
+	display: flex;
+	flex-direction: row;
+}
+#score {
+	display: block;
+	color: white;
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+#time {
+	padding-left: .4em;
+	display: block;
+	color: white;
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+
+
+
+button {
+	padding: 15px;
+	margin: 5px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	background: #234;
+	/*background: #e63946;*/
+	border: none;
+	border-radius: 10px;
+	color: white;
+}
+
+button:hover {
+	cursor: pointer;
+	background: #e63946;
+}
+button:active {
+	cursor: pointer;
+	background: #e03340;
+}
+#reveal-sequence, #new-sequence, #play-again, #restart-exercise {
+	display: none;
+}
+
+select {
+	padding: 15px;
+	margin: 5px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: .95em;
+	background: white;
+	border: none;
+	border-radius: 10px;
+}
+
+#phrase-length-range {
+	margin-bottom: 20px;
+}
+
+
+
+
+
+
+label {
+	font-family: 'Open Sans', sans-serif;
+	font-size: .95em;
+	margin: 15px 0 20px 0;
+	color: #fff;
+}
+input[type=range] {
+  width: 80%;
+  margin: -1px 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 25px;
+  width: 80%;
+  height: 2px;
+  cursor: pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  margin-top: -0.1px;
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  border: 0;
+  border-radius: 15px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+input[type=range]::-moz-range-track {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 25px;
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+}
+input[type=range]::-moz-range-thumb {
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  border: 0;
+  border-radius: 15px;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  border-width: 0 0;
+  color: transparent;
+  width: 80%;
+  height: 2px;
+  cursor: pointer;
+}
+input[type=range]::-ms-fill-lower {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50px;
+}
+input[type=range]::-ms-fill-upper {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50px;
+}
+input[type=range]::-ms-thumb {
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  border: 0;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-top: 0px;
+  /*Needed to keep the Edge thumb centred*/
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: rgba(255, 255, 255, 0.1);
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: rgba(255, 255, 255, 0.1);
+}
+/*TODO: Use one of the selectors from https://stackoverflow.com/a/20541859/7077589 
+and figure out how to remove the virtical space around the range input in IE*/
+@supports (-ms-ime-align:auto) {
+  /* Pre-Chromium Edge only styles, selector taken from hhttps://stackoverflow.com/a/32202953/7077589 */
+  input[type=range] {
+    margin: 0;
+    /*Edge starts the margin from the thumb, not the track as other browsers do*/
+  }
+}
+
+
+@media only screen and (min-width: 1700px) {
+  #play-buttons {
+    display: inline;
+  }
+  #reveal-sequence {
+    display: inline;
+  }
+  select {
+    display: inline;
+  }
+  #select-wrapper {
+	display: block;
+	margin-bottom: 10px;
+}
+#button-wrapper {
+	display: block;
+}
+}
